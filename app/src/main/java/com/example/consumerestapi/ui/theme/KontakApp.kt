@@ -61,3 +61,14 @@ fun TopAppBar(scrollBehavior: TopAppBarScrollBehavior, modifier: Modifier = Modi
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun TopAppBarKontak(
+    title: String,
+    canNavigateBack: Boolean,
+    modifier: Modifier = Modifier,
+    scrollBehavior: TopAppBarScrollBehavior? = null,
+    navigateUp: () -> Unit = {}
+){
+
+}

@@ -10,8 +10,11 @@ import com.example.consumerestapi.KontakApplication
 object PenyediaViewModel {
     val Factory = viewModelFactory {
         initializer {
-            HomeViewModel(aplikasiMars().container.kontakRepository)
+            HomeViewModel(aplikasiKontak().container.kontakRepository)
+        }
+        initializer {
+            InsertViewModel(aplikasiKontak().container.kontakRepository)
         }
     }
 }
-fun CreationExtras.aplikasiMars(): KontakApplication = (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY]as KontakApplication)
+fun CreationExtras.aplikasiKontak(): KontakApplication = (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY]as KontakApplication)

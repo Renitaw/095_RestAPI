@@ -11,12 +11,18 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.consumerestapi.navigation.DestinasiNavigasi
 import com.example.consumerestapi.ui.home.viewmodel.InsertUiEvent
 import com.example.consumerestapi.ui.home.viewmodel.InsertUiState
+import com.example.consumerestapi.ui.home.viewmodel.InsertViewModel
+import com.example.consumerestapi.ui.home.viewmodel.PenyediaViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -94,4 +100,20 @@ fun EntryKontakBody(
             Text(text = "Simpan")
         }
     }
+}
+
+object DestinasiEntry : DestinasiNavigasi{
+    override val route = "item_entry"
+    override val titleRes = "Entry Siswa"
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun EntryKontakScreen(
+    navigateBack: () -> Unit,
+    modifier: Modifier = Modifier,
+    viewModel: InsertViewModel = viewModel(factory = PenyediaViewModel.Factory),
+){
+    val coroutineScope = rememberCoroutineScope()
+    val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
 }

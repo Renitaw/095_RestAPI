@@ -21,7 +21,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.consumerestapi.R
 import com.example.consumerestapi.ui.home.HomeViewModel
-import com.example.consumerestapi.ui.home.screen.HomeScreen
+import com.example.consumerestapi.ui.home.screen.HomeStatus
 import com.example.consumerestapi.ui.home.viewmodel.PenyediaViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -40,12 +40,6 @@ fun KontakApp(
                 .fillMaxSize()
                 .padding(it)
         ) {
-            HomeScreen(
-                kontakUIState = homeViewModel.kontakUIState,
-                retryAction = homeViewModel::getKontak
-            )
-
-
         }
     }
 }

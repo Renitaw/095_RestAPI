@@ -39,7 +39,7 @@ fun FormInputSiswa(
         OutlinedTextField(
             value = insertUiEvent.alamat,
             onValueChange ={onValueChange(insertUiEvent.copy(alamat = it))},
-            label = { Text("Email") },
+            label = { Text("Alamat") },
             singleLine = true,
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled
@@ -49,12 +49,17 @@ fun FormInputSiswa(
             value = insertUiEvent.nohp,
             onValueChange ={onValueChange(insertUiEvent.copy(nohp = it))},
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            label = { Text("Telepon") },
+            label = { Text("No HP") },
             singleLine = true,
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled
         )
-
+        if (enabled) {
+            Text(
+                text = "Isi semua data",
+                modifier = Modifier.padding(start = 12.dp)
+            )
+        }
         Divider(
             thickness = 8.dp,
             modifier = Modifier.padding(bottom = 12.dp)

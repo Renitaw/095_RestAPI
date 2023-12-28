@@ -1,5 +1,6 @@
 package com.example.consumerestapi.ui.home.screen
 
+import android.net.wifi.hotspot2.pps.HomeSp
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -158,6 +159,17 @@ fun KontakCard(
 object DestinasiHome : DestinasiNavigasi{
     override val route = "home"
     override val titleRes = "Kontak"
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun HomeScreen(
+    navigateToItemEntry: () -> Unit,
+    modifier: Modifier = Modifier,
+    onDetailClick: (Int) -> Unit = {},
+    viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
+){
+
 }
 
 

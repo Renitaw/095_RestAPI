@@ -1,6 +1,5 @@
 package com.example.consumerestapi.ui.home.screen
 
-import android.net.wifi.hotspot2.pps.HomeSp
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -65,6 +64,7 @@ fun HomeStatus(
             }
         )
         is KontakUIState.Error -> OnError(retryAction, modifier = modifier.fillMaxSize())
+        else -> {}
     }
 }
 

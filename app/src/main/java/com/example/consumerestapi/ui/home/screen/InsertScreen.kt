@@ -54,7 +54,7 @@ fun FormInputSiswa(
         OutlinedTextField(
             value = insertUiEvent.alamat,
             onValueChange ={onValueChange(insertUiEvent.copy(alamat = it))},
-            label = { Text("Alamat") },
+            label = { Text("Email") },
             singleLine = true,
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled
@@ -85,7 +85,7 @@ fun FormInputSiswa(
 @Composable
 fun EntryKontakBody(
     insertUiState: InsertUiState,
-    onSiswaValueChange: (InsertUiEvent) -> Unit,
+    onKontakValueChange: (InsertUiEvent) -> Unit,
     onSaveClick: () -> Unit,
     modifier: Modifier = Modifier
 ){
@@ -95,7 +95,7 @@ fun EntryKontakBody(
     ) {
         FormInputSiswa(
             insertUiEvent = insertUiState.insertUiEvent,
-            onValueChange = onSiswaValueChange,
+            onValueChange = onKontakValueChange,
             modifier = Modifier.fillMaxWidth()
         )
         Button(
@@ -134,7 +134,7 @@ fun EntryKontakScreen(
         }) { innerPadding ->
         EntryKontakBody(
             insertUiState = viewModel.insertKontakState,
-            onSiswaValueChange = viewModel::updateInsertKontakState,
+            onKontakValueChange  = viewModel::updateInsertKontakState,
             onSaveClick = {
                 coroutineScope.launch {
                     viewModel.insertKontak()

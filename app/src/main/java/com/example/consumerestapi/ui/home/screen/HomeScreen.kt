@@ -14,9 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
-import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -40,6 +38,7 @@ import com.example.consumerestapi.model.Kontak
 import com.example.consumerestapi.navigation.DestinasiNavigasi
 import com.example.consumerestapi.ui.home.HomeViewModel
 import com.example.consumerestapi.ui.home.KontakUIState
+import com.example.consumerestapi.ui.home.viewmodel.PenyediaViewModel
 import com.example.consumerestapi.ui.theme.TopAppBarKontak
 
 @Composable
@@ -155,4 +154,12 @@ fun KontakCard(
         }
     }
 }
+
+object DestinasiHome : DestinasiNavigasi{
+    override val route = "home"
+    override val titleRes = "Kontak"
+}
+
+
+
 
